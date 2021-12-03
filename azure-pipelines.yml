@@ -10,9 +10,9 @@ steps:
     command: 'build'
     Dockerfile: '**/Dockerfile'
     arguments: '-t appimage1:latest'
+
 - task: prisma-cloud-compute-scan@3
-  displayName: 'Prisma Cloud Image Scan'
   inputs:
     scanType: 'images'
-    twistlockService: 'PrismaImageScan'
+    twistlockService: 'PrismaCompute'
     artifact: 'appimage1:latest'
