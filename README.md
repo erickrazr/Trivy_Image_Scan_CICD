@@ -1,1 +1,1 @@
-# Prisma_Image_Scan_CICD 
+# Image_Scan_CICD 
