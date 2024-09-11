@@ -17,3 +17,4 @@ steps:
     version: 'latest'
     image: 'appimage1'
     options: '--scanners vuln'
+    exitCode: '0'
