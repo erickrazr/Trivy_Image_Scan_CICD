@@ -16,5 +16,4 @@ steps:
   inputs:
     version: 'latest'
     image: 'appimage1'
-    severities: 'CRITICAL,HIGH,MEDIUM'
     options: '--scanners vuln'
