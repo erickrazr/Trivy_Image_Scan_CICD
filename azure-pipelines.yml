@@ -1,8 +1,9 @@
 trigger:
-- main
+- master
 
-vmImage: ubuntu-latest
-
+pool:
+  vmImage: ubuntu-latest
+  
 steps:
 - task: Docker@2
   displayName: 'Build NodeJS Image'
