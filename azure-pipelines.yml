@@ -17,3 +17,8 @@ steps:
     version: 'latest'
     image: 'appimage1'
     exitCode: '0'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'results.sarif'
+    ArtifactName: 'CodeAnalysisLogs'
