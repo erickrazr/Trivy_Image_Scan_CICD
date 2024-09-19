@@ -17,4 +17,4 @@ steps:
     version: 'latest'
     image: 'appimage1'
     exitCode: '0'
-    
+    options: '--format sarif -o report.sarif'
