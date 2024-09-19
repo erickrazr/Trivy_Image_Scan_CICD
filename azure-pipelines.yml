@@ -23,12 +23,12 @@ steps:
   displayName: 'Install Trivy'
  
 - script: |
-    ./trivy/trivy image --format sarif -o CodeAnalysisLogs.sarif --scanners vuln appimage1:latest
+    ./trivy/trivy image --format sarif -o CodeAnalysisLogs --scanners vuln appimage1:latest
   displayName: 'Scan Docker Image with Trivy'
 
 
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: '$(Pipeline.Workspace)'
-    artifact: 'trivy-results.sarif'
+    artifact: 'CodeAnalysisLogs'
     publishLocation: 'pipeline'
