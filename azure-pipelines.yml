@@ -27,3 +27,8 @@ steps:
   displayName: 'Scan Docker Image with Trivy'
 
 
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'trivy-results.sarif'
+    publishLocation: 'pipeline'
