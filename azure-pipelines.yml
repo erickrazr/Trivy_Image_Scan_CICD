@@ -12,23 +12,9 @@ steps:
     Dockerfile: '**/Dockerfile'
     arguments: '-t appimage1:latest'
     
-#- task: trivy@1
-#  inputs:
-#    version: 'latest'
-#    image: 'appimage1'
-#    exitCode: '0'
-
-- script: |
-    curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b ./trivy
-  displayName: 'Install Trivy'
- 
-- script: |
-    ./trivy/trivy image --format sarif -o CodeAnalysisLogs --scanners vuln appimage1:latest
-  displayName: 'Scan Docker Image with Trivy'
-
-
-- task: PublishPipelineArtifact@1
+- task: trivy@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)'
-    artifact: 'CodeAnalysisLogs'
-    publishLocation: 'pipeline'
+    version: 'latest'
+    image: 'appimage1'
+    exitCode: '0'
+
