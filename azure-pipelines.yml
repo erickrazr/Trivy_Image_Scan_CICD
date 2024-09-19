@@ -23,7 +23,7 @@ steps:
   displayName: 'Install Trivy'
  
 - script: |
-    ./trivy/trivy image --format sarif -o trivy-results.sarif appimage1:latest
+    ./trivy/trivy image --format sarif -o CodeAnalysisLogs.sarif --scanners vuln' appimage1:latest
   displayName: 'Scan Docker Image with Trivy'
 
 
